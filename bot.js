@@ -10,8 +10,9 @@ const qs = require("querystring")
 const Discord = require("discord.js")
 const client = new Discord.Client()
 const dig = require('gamedig')
+const config = require('./config.js')
 // const hook = new Discord.WebhookClient('')
-client.login('NDIwNTY0MjM0MDE1OTk3OTU0.DYAg-g.9IGGVZM2YGjXZ5mCTTwa2JU_JA0')
+client.login(config.token)
 
 client.on('ready', () => console.log('YAY LOGGED IN'))
 
@@ -48,13 +49,7 @@ let getInfo = (ip, port) => {
 }
 
 //let servers = ['payload.gaminginstitute.in', 'funmode.gaminginstitute.in', 'jump.gaminginstitute.in', 'payload.gaminginstitute.in:27016', 'funmode.gaminginstitute.in']
-let servers = new Array(
-    ['payload.gaminginstitute.in', 27015], // PL
-    ['pug2.gaminginstitute.in', 27015], // PUG
-    ['pug3.gaminginstitute.in', 27015], // Pug
-    ['jump.gaminginstitute.in', 27015], // JUMP
-    ['payload.gaminginstitute.in', 27016] // MGE
-)
+let servers = config.servers
 
 let createEmbed = (info, sv) => {
     return new Discord.RichEmbed()
