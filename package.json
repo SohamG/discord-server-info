@@ -1,0 +1,36 @@
+{
+  "name": "serverinfo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "babel": {
+    "plugins": [
+      "transform-async-to-generator"
+    ],
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist/ && babel ./src/ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "start": "npm run build && node dist/bot.js"
+  },
+  "author": "SohamG",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "gamedig": "^1.0.41",
+    "steam-query": "0.0.10"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2"
+  }
+}

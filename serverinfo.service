@@ -1,0 +1,8 @@
+[Unit]
+Description=AutoUpdates Discord
+
+[Service]
+ExecStart=nodemon ~/serverinfobot/src/bot.js
+
+[Install]
+WantedBy=multi-user.target
